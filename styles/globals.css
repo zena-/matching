@@ -14,3 +14,114 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.page .buttons {
+  padding: 30px 10px;
+}
+
+button {
+  background: orange;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 17px;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  font-weight: bold;
+  font-size: 27px;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.boxes {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);;
+  gap: 20px;
+  justify-items: stretch;
+  padding: 10px;
+}
+
+li {list-style: none;}
+
+.boxes .box {
+  border: 3px solid orange;
+  cursor: pointer;
+  padding: 30%;
+  text-align: center;
+  align-self: center;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: bold;
+  position: relative;
+}
+
+.box, .box div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front {
+  background: #fff;
+  z-index: 2;
+}
+
+
+
+.box div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #fff;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transition: background 0.4s linear;
+}
+
+
+.box.flip .back {
+  transform: rotateY(0);
+  z-index: 5;
+}
+.box.flip .front {
+  transform: rotateY(180deg);
+  transition: transform 0.4s linear;
+}
+
+.nomatch .back {
+  background: red; 
+  color: #fff;
+  /*transition: background 0.9s linear;*/
+}
+.match .back {
+  background: green; 
+  color: #fff;
+}
+
+
+
+
+
