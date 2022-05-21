@@ -5,9 +5,7 @@ import Image from 'next/image'
 export default function Home() {
   const [score, setscore] = useState(100)
   const [randomNum, setrandomNum] = useState(true)
-  const [shake, setshake] = useState(false)
 
-  const [flip, setFlip] = useState(false)
   let disableDeck = false  
 
   useEffect(() => {
@@ -24,12 +22,12 @@ export default function Home() {
       let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
       arr.sort(() => Math.random() > 0.5 ? 1 : -1)
       boxs.forEach((b, i) =>  b.classList.remove("flip"))
-      bBack.forEach((b, i) =>  b.innerHTML = arr[i])//Math.floor(Math.random() * 8) + 1)
+      bBack.forEach((b, i) =>  b.innerHTML = arr[i])
       setrandomNum(false)
     }
 
     let flipCard = ({ target: clickedCard }) => {
-      if (cardOne !== clickedCard ){//&& !disableDeck) {
+      if (cardOne !== clickedCard ){
         clickedCard.classList.add("flip")
         if(!cardOne) {
           return cardOne = clickedCard
@@ -67,13 +65,12 @@ export default function Home() {
         cardOne = ""
         cardTwo = ""
       }, 1000)
-      // }
     }
 
     boxs.forEach(b => {
       b.addEventListener("click", flipCard)
     })
-  },[disableDeck, flip, score, randomNum])
+  },[disableDeck, score, randomNum])
 
   return (
     <div >
@@ -90,70 +87,70 @@ export default function Home() {
         </div>
         <div className="game">
           <ul className="boxes grid">
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">3</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">6</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">1</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">7</div>
             </li>
 
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">4</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">2</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">5</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">8</div>
             </li>
 
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">8</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">1</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">3</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">2</div>
             </li>
 
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">6</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">4</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">7</div>
             </li>
-            <li className={`box ${flip ? 'flip' : ''}`}>
+            <li className='box'>
               <div className="front"></div>
               <div className="back">5</div>
             </li>

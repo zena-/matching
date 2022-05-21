@@ -40,6 +40,7 @@ p {
   font-size: 27px;
   margin: 0;
   padding-right: 20px;
+  align-self: center;
 }
 
 .game {
@@ -58,7 +59,7 @@ p {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-items: stretch;
   padding: 10px;
@@ -114,7 +115,6 @@ li {list-style: none;}
 .nomatch .back {
   background: red; 
   color: #fff;
-  /*transition: background 0.9s linear;*/
 }
 .match .back {
   background: green; 
@@ -122,6 +122,12 @@ li {list-style: none;}
 }
 
 
-
+@media(max-width:500px){
+  p {font-size: 20px;}
+  button { padding: 10px;}
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 
