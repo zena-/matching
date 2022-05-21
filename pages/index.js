@@ -49,7 +49,7 @@ export default function Home() {
         cardTwo.removeEventListener("click", flipCard)
         return (
           cardOne = "",
-          cardTwo = "",
+          cardTwo = ""
         )
       }
       else {
